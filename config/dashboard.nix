@@ -9,7 +9,7 @@
       config = {
         packages = { enable = false; };
         week_header.enable = true;
-        footer = [ " " " " "Don't Stop Until You are Proud..." ];
+        footer = [ " " " " "We are using here a powerful strategy of synthesis: wishful thinking." ];
         project = { enable = false; };
         header = [
           "███╗   ██╗██╗██╗  ██╗██╗   ██╗██╗███╗   ███╗"
