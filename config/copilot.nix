@@ -6,7 +6,7 @@ in{
     enable = true;
     filetypes=  {
       "*" = false;
-      "copilot" = true;
+      copilot = true;
     };
     suggestion = {
       enabled = true;
@@ -17,7 +17,13 @@ in{
     (mkKeymap "n" "<leader>ucc" {
       __raw = #lua
       ''
-        function(ot disable")
+        function()
+          if vim.g.copilot_status == nil then
+            vim.g.copilot_status = "running"
+          end
+          if vim.g.copilot_status == "running" then
+            vim.g.copilot_status = "stopped"
+            vim.cmd("Copilot disable")
           else
             vim.g.copilot_status = "running"
             vim.cmd("Copilot enable")
