@@ -18,6 +18,8 @@ let
     fg = "#bbc2cf";
   };
 
+  copilot_icon = "";
+
 in {
   plugins.lualine = {
     enable = true;
@@ -132,6 +134,15 @@ in {
     end
 
     local components = {}
+
+    -- Define a component to show the Copilot status
+    components.copilot = function()
+      if vim.b.copilot_status == "running" then
+        return "%#SLGreen#" .. "${icons.kind.Copilot}" .. " " -- Adjust icon color and style here
+      else
+        return ""
+      end
+    end
 
     components.mode = {
       "mode",
