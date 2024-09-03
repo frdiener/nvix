@@ -6,7 +6,6 @@ in{
     enable = true;
     filetypes=  {
       "*" = false;
-      copilot = true;
     };
     suggestion = {
       enabled = true;
@@ -26,23 +25,11 @@ in{
             vim.cmd("Copilot disable")
           else
             vim.g.copilot_status = "running"
-            vim.cmd("Copilot enable")
+            vim.cmd("Copilot! attach")
           end
         end
       '';
      }
      "Toggle Copilot")
-    (mkKeymap "n" "<leader>ucf" {
-      __raw = #lua
-      ''
-        function ()
-          local original_filetype = vim.bo.filetype
-          vim.bo.filetype = "copilot"
-          vim.cmd('Copilot enable')
-          vim.bo.filetype = original_filetype
-          print("Copilot enabled for this buffer.")
-        end
-      '';
-    } "ForceEnableCopilotForBuffer")
   ];
 }
