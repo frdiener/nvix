@@ -275,26 +275,6 @@ in {
       }
     end
 
-    components.copilot = function()
-      local lsp_clients = vim.lsp.get_active_clients()
-      local copilot_active = false
-      local str = ""
-      if next(lsp_clients) == nil then
-        return str
-      end
-
-      for _, client in ipairs(lsp_clients) do
-        if client.name == "copilot" then
-          copilot_active = true
-          break
-        end
-      end
-      if copilot_active then
-        str = "%#SLGreen#" .. "${icons.kind.Copilot}"
-      end
-      return str
-    end
-
     components.location = {
       "location",
       color = { fg = "#000000" },
