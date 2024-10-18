@@ -6,6 +6,15 @@
       enable = true;
       texlivePackage = pkgs.texlive.combined.scheme-full;
     };
+    ltex-extra = {
+      enable = true;
+      settings = {
+        load_langs = [
+          "en-US"
+          "de-DE"
+        ];
+      };
+    };
   };
 
   extraConfigLuaPre = ''
