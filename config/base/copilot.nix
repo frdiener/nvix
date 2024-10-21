@@ -9,6 +9,7 @@ in {
       autoTrigger = true;
     };
   };
+  plugins.copilot-chat.enable = true;
   wKeyList = [ (specObj [ "<leader>a" "󰚩" "ai" ]) ];
   keymaps = [
     (mkKeymap "n" "<leader>ac"
