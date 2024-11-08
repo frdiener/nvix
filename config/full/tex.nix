@@ -8,7 +8,7 @@
     };
     lsp.servers.ltex = {
       enable = true;
-      autostart = true;
+      autostart = false;
       settings = {
         enabled = true;
         language = "de-DE";
