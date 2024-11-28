@@ -75,6 +75,7 @@ with lib;
             row = vim.o.lines - 10,
             border = 'rounded',
             style = 'minimal',
+            bg = 'none',
           })
 
           -- Run the command in the terminal
