@@ -6,7 +6,6 @@
     };
     lazygit = {
       enable = true;
-      settings.floating_window_winblend = 90;
     };
   };
 }
