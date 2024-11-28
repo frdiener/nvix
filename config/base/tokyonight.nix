@@ -41,6 +41,9 @@
                   bg = c.bg_dark,
                   fg = c.bg_dark,
                 }
+                -- Add transparency settings for float windows
+                hl.NormalFloat = { bg = "none" }
+                hl.FloatBorder = { bg = "none", fg = c.blue }
               end
           '';
 
