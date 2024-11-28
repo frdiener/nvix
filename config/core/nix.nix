@@ -1,4 +1,4 @@
-{ lib, mkKey, specObj, pkgs, ... }:
+{ lib, mkKey, helpers, specObj, pkgs, ... }:
 let
   inherit (mkKey) mkKeymap;
 in
@@ -26,5 +26,70 @@ with lib;
 
   wKeyList = [
     (specObj [ "<leader>l" "󰿘" "lsp" ])
+    (specObj [ "<leader>n" "" "nh" ])
+  ];
+
+  keymaps = [
+    (mkKeymap "n" "<leader>nh"
+      (helpers.mkRaw # lua
+      ''
+        function ()
+          -- Open a new floating terminal window
+          local buf = vim.api.nvim_create_buf(false, true)
+          vim.api.nvim_open_win(buf, true, {
+            relative = 'editor',
+            width = 120,
+            height = 10,
+            col = 20,
+            row = vim.o.lines - 10,
+            border = 'rounded',
+            style = 'minimal',
+          })
+
+          -- Run the command in the terminal
+          vim.fn.termopen("nh home switch", {
+            on_exit = function(_, code)
+              if code ~= 0 then
+                vim.notify("Command exited with code " .. code, vim.log.levels.ERROR)
+              end
+            end,
+          })
+
+          -- Set keybinding to close the floating window with 'q'
+          vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+        end
+      '')
+    "Switch Home")
+
+    (mkKeymap "n" "<leader>ns"
+      (helpers.mkRaw # lua
+      ''
+        function ()
+          -- Open a new floating terminal window
+          local buf = vim.api.nvim_create_buf(false, true)
+          vim.api.nvim_open_win(buf, true, {
+            relative = 'editor',
+            width = 120,
+            height = 10,
+            col = 20,
+            row = vim.o.lines - 10,
+            border = 'rounded',
+            style = 'minimal',
+          })
+
+          -- Run the command in the terminal
+          vim.fn.termopen("nh os switch", {
+            on_exit = function(_, code)
+              if code ~= 0 then
+                vim.notify("Command exited with code " .. code, vim.log.levels.ERROR)
+              end
+            end,
+          })
+
+          -- Set keybinding to close the floating window with 'q'
+          vim.api.nvim_buf_set_keymap(buf, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+        end
+      '')
+    "Switch System")
   ];
 }
