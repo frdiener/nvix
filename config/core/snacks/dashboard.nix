@@ -49,7 +49,7 @@
           local cmds = {
             {
               title = "Notifications",
-              cmd = "gh notify -s -a -n5",
+              cmd = "gh-notify -s -a -n5",
               action = function()
                 vim.ui.open("https://github.com/notifications")
               end,
