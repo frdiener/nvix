@@ -8,6 +8,29 @@ in {
       enable = true;
       texlivePackage = pkgs.texlive.combined.scheme-full;
     };
+    lsp.servers.ltex = {
+      enable = true;
+      autostart = false;
+      settings = {
+        enabled = true;
+        language = "de-DE";
+        additionalRules = {
+          motherTongue = "de-DE";
+          enablePickyRules = true;
+          completionEnabled = true;
+        };
+      };
+    };
+    ltex-extra = {
+      enable = true;
+      settings = {
+        initCheck = true;
+        load_langs = [
+          "en-US"
+          "de-DE"
+        ];
+      };
+    };
   };
 
   extraConfigLuaPre = ''
