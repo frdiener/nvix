@@ -8,6 +8,7 @@
     tex = ./tex;
     lang = ./lang;
     molten = ./molten;
+    nixos = ./nixos;
     snacks = ./snacks;
     buffer = ./buffer; # Buffer manager/bufferline
     chatgpt = ./chatgpt;
