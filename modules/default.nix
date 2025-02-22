@@ -9,6 +9,7 @@
     lang = ./lang;
     snacks = ./snacks;
     buffer = ./buffer; # Buffer manager/bufferline
+    chatgpt = ./chatgpt;
     general = ./general; # General Neovim config
     lualine = ./lualine;
     copilot = ./copilot;
