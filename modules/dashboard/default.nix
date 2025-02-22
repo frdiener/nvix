@@ -6,11 +6,11 @@
       change_to_vcs_root = true;
       config = {
         packages.enable = false;
-        footer = [
-          ""
-          "Made with ❤️"
-          ""
-        ];
+        # footer = [
+        #  ""
+        #   "Made with ❤️"
+        #  ""
+        # ];
         mru.limit = 5;
         week_header.enable = true;
         project.enable = true;
