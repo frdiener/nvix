@@ -7,15 +7,13 @@ in {
       (helpers.mkRaw # lua
         ''
           function()
-            if vim.g.copilot_status == nil then
-              vim.g.copilot_status = "running"
-            end
-            if vim.g.copilot_status == "running" then
-              vim.g.copilot_status = "stopped"
-              vim.cmd("Copilot disable")
+            if vim.b.copilot_status == "running" then
+              vim.b.copilot_status = "stopped"
+              vim.cmd("Copilot detach")
             else
-              vim.g.copilot_status = "running"
+              vim.b.copilot_status = "running"
               vim.cmd("Copilot enable")
+              vim.cmd("Copilot! attach")
             end
           end
         '')
