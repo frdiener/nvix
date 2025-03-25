@@ -17,5 +17,6 @@
     self.nvixModules.nixos
     self.nvixModules.chatgpt
     self.nvixModules.molten
+    self.nvixModules.dadbod
   ];
 }

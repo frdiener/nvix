@@ -7,8 +7,9 @@
     cmp = ./cmp;
     tex = ./tex;
     lang = ./lang;
-    molten = ./molten;
     nixos = ./nixos;
+    dadbod = ./dadbod;
+    molten = ./molten;
     snacks = ./snacks;
     buffer = ./buffer; # Buffer manager/bufferline
     chatgpt = ./chatgpt;
